@@ -12,5 +12,6 @@ Listen.to(config.dir) do |mod, add, rm|
     response = Imgur.upload_file(add.first)
     img_url = Imgur.url_for(response[:hash], response)
     puts img_url
+    system("echo \"#{img_url}\" | xclip -selection clipboard")
   end
 end
