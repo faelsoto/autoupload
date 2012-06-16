@@ -1,5 +1,6 @@
 require 'listen'
 require_relative 'config'
+require_relative 'imgur'
 
 config = LocalConfig.new
 
