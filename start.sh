@@ -1,2 +1,3 @@
 #!/bin/bash
-ruby ~/www/autoimgur/listen.rb
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "ruby $DIR/listen.rb" | at now + 1 minute

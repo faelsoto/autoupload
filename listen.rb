@@ -8,11 +8,12 @@ Imgur.api_key = config.api_key
 
 if config.api_key.empty?
   Guard::Notifier::NotifySend::notify "failure", "Autoupload", "Error: Te falta agregar la API key.", nil
+  abort 
 else
   Guard::Notifier::NotifySend::notify nil, "Autoupload", "Saca screenshots!", nil
 end
 
-Listen.to(config.dir) do |mod, add, rm|
+Listen.to("#{File.dirname __FILE__}/#{config.dir}") do |mod, add, rm|
   unless add.nil?
     puts add
     response = Imgur.upload_file(add.first)
