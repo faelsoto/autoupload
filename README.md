@@ -4,6 +4,7 @@ Requerimientos
 - Ruby 1.9
 - listen `gem install listen`
 - guard `gem install guard`
+- libnotify `sudo apt-get install libnotify4`
 - xclip `sudo apt-get install xclip`
 
 
